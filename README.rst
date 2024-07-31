@@ -113,3 +113,110 @@ Citation
    :target: https://ci.appveyor.com/project/ESRF/silx?branch=master
 .. |zenodo DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.591709.svg
    :target: https://doi.org/10.5281/zenodo.591709
+
+
+# Pho
+
+```powershell
+pyenv local 3.9.13
+pyenv exec python -m ensurepip --default-pip
+pyenv exec python -m pip install --upgrade pip
+pyenv exec python -m pip install virtualenv venv
+pyenv exec python -m venv .venv # make new virtual environment
+deactivate
+.venv\Scripts\activate
+.venv\Scripts\python -m ensurepip --default-pip 
+.venv\Scripts\python -m pip install --upgrade pip
+.venv\Scripts\python -m pip install -r requirements.txt
+```
+
+```
+.venv\Scripts\python -m pip uninstall silx
+.venv\Scripts\python -m pip install -r requirements-dev.txt
+.venv\Scripts\python -m pip install .
+```
+
+
+```
+.venv\Scripts\python -m build --wheel
+.venv\Scripts\python -m pip install dist/silx*.whl
+```
+
+```
+.venv\Scripts\python -m pip install .  # Make sure to install the same version as the source
+sphinx-build doc/source/ build/html
+```
+
+
+.. ```cmd
+.. .. set VCVARSALL_BAT="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. set VCVARSALL_BAT="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. call %VCVARSALL_BAT% amd64
+
+.. $VCVARSALL_BAT="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. & $VCVARSALL_BAT amd64
+
+.. ```
+
+
+# Manual Try:
+.. ```powershell
+.. .. set VCVARSALL_BAT="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. set VCVARSALL_BAT="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. call %VCVARSALL_BAT% amd64
+
+.. $env:INCLUDE += ";C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared"
+.. $env:LIB += ";C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64"
+.. $env:PATH += ";C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64"
+
+
+.. $VCVARSALL_BAT="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
+.. & $VCVARSALL_BAT amd64
+
+
+  name = 'x64 Native Tools Command Prompt for VS 2022'
+  cmd_str = '%comspec% /k "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"'
+  start_in = '"C:\Program Files\Microsoft Visual Studio\2022\Community\"'
+
+.. ```
+
+# ONLY WORKING BELOW THIS LINE:
+# Only got working in `x64 Native Tools Command Prompt for VS 2022`:
+```powershell
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.10.5
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+C:\Program Files\Microsoft Visual Studio\2022\Community>cd C:\Users\pho\repos\Spike3DWorkEnv\silx
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>cd C:\Users\pho\repos\Spike3DWorkEnv\silx
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>deactivate
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\activate
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\python -m ensurepip --default-pip
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\python -m pip install --upgrade pip build setuptools
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\python -m pip uninstall silx
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\python -m pip install -r requirements-dev.txt
+(.venv) C:\Users\pho\repos\Spike3DWorkEnv\silx>.venv\Scripts\python -m pip install .
+```
+
+# Building wheel .whl
+```powershell
+.venv\Scripts\python -m build --wheel
+Successfully built silx-2.1.1a0-cp39-cp39-win_amd64.whl
+```
+
+
+# Building documentation
+```powershell
+cd doc # change to doc folder
+make.bat html
+make.bat dirhtml
+make.bat singlehtml
+
+make.bat json
+make.bat htmlhelp
+make.bat qthelp
+make.bat man
+```
+Outputs are created in "C:\Users\pho\repos\Spike3DWorkEnv\silx\doc\build\singlehtml\index.html"

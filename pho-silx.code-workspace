@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "site-packages Silx",
+			"path": "../Spike3D/.venv/Lib/site-packages/silx"
+		},
+		{
+			"name": "Silx Examples (Spike3D)",
+			"path": "../Spike3D/LibrariesExamples/Silx"
+		},
+		{
+			"name": "Pho-Fork Silx",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
