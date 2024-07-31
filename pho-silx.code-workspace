@@ -13,5 +13,15 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"pyqt-integration.pyrcc.cmd": "C:\\Users\\pho\\repos\\Spike3DWorkEnv\\silx\\.venv\\Scripts\\pyrcc5.exe",
+		"pyqt-integration.qtdesigner.path": "C:\\Program Files (x86)\\Qt Designer\\designer.exe",
+		"pyqt-integration.pyuic.cmd": "C:\\Users\\pho\\repos\\Spike3DWorkEnv\\silx\\.venv\\Scripts\\pyuic5.exe",
+		"pyqt-integration.pylupdate.cmd": "C:\\Users\\pho\\repos\\Spike3DWorkEnv\\silx\\.venv\\Scripts\\pylupdate5.exe"
+	},
+	"extensions": {
+		"recommendations": [
+			"phohale.pho-pyqt-class-generator"
+		]
+	}
 }
