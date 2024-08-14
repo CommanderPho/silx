@@ -95,3 +95,6 @@ target/
 
 #Notebook checkpoints
 .ipynb_checkpoints
+package/windows/artifacts/silx-*.exe
+package/windows/LICENSE
+package/windows/create-installer.iss
