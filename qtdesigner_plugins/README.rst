@@ -31,6 +31,16 @@ To access ``silx.gui`` widgets from within Qt designer, under Linux, type from t
     PYQTDESIGNERPATH=<silx_designer_plugin_dir> designer
 
 
+PYQTDESIGNERPATH
+
+PYQTDESIGNERPATH=C:\Users\pho\repos\Spike3DWorkEnv\silx\qtdesigner_plugins\
+
+
+exe_path=r"C:\Program Files (x86)\Qt Designer\designer.exe"
+start_in=r"C:\Program Files (x86)\Qt Designer"
+
+
+
 See `"using Qt Designer" <http://pyqt.sourceforge.net/Docs/PyQt5/designer.html>`_ in the PyQt_ documentation.
 
 .. _Qt: http://www.qt.io/

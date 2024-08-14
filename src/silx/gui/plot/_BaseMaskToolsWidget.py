@@ -949,6 +949,7 @@ class BaseMaskToolsWidget(qt.QWidget):
         self.otherToolGroup.setLayout(layout)
         return self.otherToolGroup
 
+
     def changeEvent(self, event):
         """Reset drawing action when disabling widget"""
         if (
@@ -958,6 +959,7 @@ class BaseMaskToolsWidget(qt.QWidget):
         ):
             # Disable drawing tool by reseting interaction to pan or zoom
             self.plot.resetInteractiveMode()
+
 
     def save(self, filename, kind):
         """Save current mask in a file
