@@ -5,6 +5,10 @@ description = "Software library for X-ray data analysis"
 authors = ["data analysis unit <silx@esrf.fr>"]
 readme = "README.rst"
 
+[tool.poetry.dependencies]
+python = ">=3.8"
+cython = ">=0.29.31"
+
 [build-system]
 requires = [
     "wheel",
