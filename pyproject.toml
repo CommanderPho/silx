@@ -1,8 +1,16 @@
+[tool.poetry]
+name = "silx"
+version = "2.1.1a0"
+description = "Software library for X-ray data analysis"
+authors = ["data analysis unit <silx@esrf.fr>"]
+readme = "README.rst"
+
 [build-system]
 requires = [
     "wheel",
     "setuptools",
-    "Cython>=0.29.31"
+    "Cython>=0.29.31",
+    "poetry-core",
 ]
 build-backend = "setuptools.build_meta"
 
